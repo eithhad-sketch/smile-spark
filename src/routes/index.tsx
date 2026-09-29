@@ -141,12 +141,15 @@ function Hero() {
     <section id="top" className="relative flex min-h-svh items-center overflow-hidden">
       <video
         className="absolute inset-0 size-full object-cover"
-        src={heroVideo.url}
         autoPlay
         muted
         loop
         playsInline
-      />
+        poster={clinicRoom}
+      >
+        <source src="/videos/hero.webm" type="video/webm" />
+        <source src={heroVideo.url} type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/10" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
