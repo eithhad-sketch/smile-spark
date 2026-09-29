@@ -242,8 +242,7 @@ function Services() {
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Every visit starts with an unhurried conversation about what you
-            actually want — never a sales pitch.
+            Unhurried care — never a sales pitch.
           </p>
         </div>
       </Reveal>
@@ -300,9 +299,7 @@ function About() {
             A studio built around calm, not fear.
           </h2>
           <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
-            Warm light, quiet rooms, and a team that explains every step before
-            it begins. Most of our patients used to dread the dentist — now
-            they fall asleep in the chair.
+            Warm light, quiet rooms, and a team that explains every step.
           </p>
           <ul className="mt-8 space-y-4">
             {COMFORT_POINTS.map((point) => (
@@ -456,9 +453,7 @@ function Visit() {
             Come by, or reach out.
           </h2>
           <p className="mt-5 max-w-md leading-relaxed text-background/70">
-            New patients are always welcome. Share a little about what's
-            bringing you in, and we'll find a time that works — usually within
-            one business day.
+            New patients always welcome — we'll find a time that works.
           </p>
           <div className="mt-10 space-y-5">
             <div className="flex items-start gap-4">
