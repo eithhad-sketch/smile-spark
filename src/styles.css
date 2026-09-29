@@ -106,4 +106,19 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Slow cinematic pan for the hero background */
+  @keyframes hero-pan {
+    0% {
+      transform: scale(1.08) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.22) translate3d(-2.5%, -2%, 0);
+    }
+  }
+
+  .hero-pan {
+    animation: hero-pan 24s ease-in-out infinite alternate;
+    will-change: transform;
+  }
 }
