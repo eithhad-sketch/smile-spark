@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Check,
 } from "lucide-react";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import heroDental from "@/assets/hero-dental.jpg";
 import clinicRoom from "@/assets/clinic-room.jpg";
 import drMarsh from "@/assets/team-dr-mars.jpg";
@@ -139,13 +140,16 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative flex min-h-svh items-center overflow-hidden">
-      <img
-        src={heroDental}
-        alt=""
-        className="hero-pan absolute inset-0 size-full object-cover"
-        width={1920}
-        height={1080}
-      />
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={heroDental}
+        className="absolute inset-0 size-full object-cover"
+      >
+        <source src={heroVideo.url} type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/10" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
@@ -163,25 +167,13 @@ function Hero() {
             </h1>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/80">
-              Calm, judgment-free dentistry in a bright, light-filled studio —
-              from gentle cleanings to complete smile restoration.
-            </p>
-          </Reveal>
-          <Reveal delay={300}>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-9">
               <a
                 href="#visit"
                 className="inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 text-sm font-semibold text-foreground shadow-lg transition-transform hover:-translate-y-0.5"
               >
                 Book an appointment
                 <ArrowRight className="size-4" />
-              </a>
-              <a
-                href="#services"
-                className="rounded-full px-6 py-3.5 text-sm font-semibold text-primary-foreground ring-1 ring-primary-foreground/40 transition-colors hover:bg-primary-foreground/10"
-              >
-                Explore services
               </a>
             </div>
           </Reveal>
