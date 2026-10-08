@@ -20,6 +20,7 @@ import teamPhoto from "@/assets/dental-care-team.jpg.asset.json";
 import imagingPhoto from "@/assets/dental-imaging.jpg.asset.json";
 import toolsPhoto from "@/assets/dental-instruments.jpg.asset.json";
 import { Button } from "@/components/ui/button";
+import { Logo, TrustBar, Process, Gallery, InfoFaq } from "@/components/clinic-extras";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -110,12 +111,7 @@ function Nav() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <nav className="flex min-h-20 items-center justify-between gap-3 py-3">
           <a href="#top" className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-full bg-primary text-primary-foreground">
-              <ToothMark className="size-5" />
-            </span>
-            <span className="font-display text-base font-semibold sm:text-lg">
-              Northlight <span className="text-primary">Dental</span>
-            </span>
+            <Logo />
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
             {NAV_LINKS.map((link) => (
@@ -526,9 +522,7 @@ function Footer() {
     <footer className="border-t border-background/10 bg-foreground pb-10 text-background">
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 pt-10 sm:flex-row sm:items-center">
         <div className="flex items-center gap-3">
-          <span className="grid size-8 place-items-center rounded-full bg-primary text-primary-foreground">
-            <ToothMark className="size-4.5" />
-          </span>
+          <Logo light />
           <span className="text-sm text-background/60">
             © 2026 Northlight Dental Studio · Portland, OR
           </span>
@@ -562,9 +556,13 @@ function Index() {
       <Nav />
       <main>
         <Hero />
+        <TrustBar />
         <Services />
+        <Process />
         <About />
+        <Gallery />
         <Team />
+        <InfoFaq />
         <Visit />
       </main>
       <Footer />
