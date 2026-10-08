@@ -42,18 +42,18 @@
 }
 
 :root {
-  --radius: 1rem;
-  --font-display: "Fraunces", Georgia, serif;
+  --radius: 0.5rem;
+  --font-display: "Work Sans", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
-  --background: oklch(0.975 0.01 95);
+  --background: oklch(0.99 0.002 175);
   --foreground: oklch(0.27 0.025 175);
-  --card: oklch(0.995 0.004 95);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.27 0.025 175);
   --popover: oklch(0.995 0.004 95);
   --popover-foreground: oklch(0.27 0.025 175);
   --primary: oklch(0.45 0.075 172);
   --primary-foreground: oklch(0.975 0.01 95);
-  --secondary: oklch(0.93 0.018 105);
+  --secondary: oklch(0.96 0.012 175);
   --secondary-foreground: oklch(0.33 0.03 172);
   --muted: oklch(0.94 0.014 100);
   --muted-foreground: oklch(0.51 0.025 175);
@@ -80,6 +80,10 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    letter-spacing: 0;
   }
 
   ::selection {
@@ -121,4 +125,10 @@
     animation: hero-pan 24s ease-in-out infinite alternate;
     will-change: transform;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-pan { animation: none; }
 }

@@ -12,11 +12,14 @@ import {
   Check,
 } from "lucide-react";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import heroDental from "@/assets/hero-dental.jpg";
-import clinicRoom from "@/assets/clinic-room.jpg";
-import drMarsh from "@/assets/team-dr-mars.jpg";
-import drWilliams from "@/assets/team-dr-okafor.jpg";
-import priya from "@/assets/team-priya.jpg";
+import heroWebm from "@/assets/hero.webm.asset.json";
+import clinicPhoto from "@/assets/dental-clinic.jpg.asset.json";
+import treatmentPhoto from "@/assets/dental-treatment.jpg.asset.json";
+import consultationPhoto from "@/assets/dental-consultation.jpg.asset.json";
+import teamPhoto from "@/assets/dental-care-team.jpg.asset.json";
+import imagingPhoto from "@/assets/dental-imaging.jpg.asset.json";
+import toolsPhoto from "@/assets/dental-instruments.jpg.asset.json";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -97,20 +100,20 @@ function ToothMark({ className = "size-8" }: { className?: string }) {
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
-  { label: "Team", href: "#team" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Our approach", href: "#team" },
+  { label: "Contact", href: "#visit" },
 ];
 
 function Nav() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className="absolute inset-x-0 top-0 z-50 border-b border-border bg-background">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <nav className="mt-4 flex items-center justify-between rounded-full bg-card/80 px-5 py-3 shadow-sm ring-1 ring-black/5 backdrop-blur-md">
+        <nav className="flex min-h-20 items-center justify-between gap-3 py-3">
           <a href="#top" className="flex items-center gap-2.5">
             <span className="grid size-9 place-items-center rounded-full bg-primary text-primary-foreground">
               <ToothMark className="size-5" />
             </span>
-            <span className="font-display text-lg font-semibold tracking-tight">
+            <span className="font-display text-base font-semibold sm:text-lg">
               Northlight <span className="text-primary">Dental</span>
             </span>
           </a>
@@ -125,12 +128,9 @@ function Nav() {
               </a>
             ))}
           </div>
-          <a
-            href="#visit"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
-          >
-            Book a visit
-          </a>
+          <Button asChild className="h-11 px-4 sm:px-5">
+            <a href="#visit">Book a visit <ArrowRight /></a>
+          </Button>
         </nav>
       </div>
     </header>
@@ -139,15 +139,16 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative flex min-h-svh items-center overflow-hidden">
+    <section id="top" className="relative flex min-h-[660px] lg:min-h-[720px] items-center overflow-hidden">
       <video
         autoPlay
         muted
         loop
         playsInline
-        poster={heroDental}
+        poster={clinicPhoto.url}
         className="absolute inset-0 size-full object-cover"
       >
+        <source src={heroWebm.url} type="video/webm" />
         <source src={heroVideo.url} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/10" />
@@ -163,38 +164,20 @@ function Hero() {
           </Reveal>
           <Reveal delay={100}>
             <h1 className="font-display mt-6 text-5xl leading-[1.05] font-semibold text-balance text-primary-foreground sm:text-6xl lg:text-7xl">
-              Dental care that feels like a deep breath.
+              Northlight Dental Studio
             </h1>
           </Reveal>
           <Reveal delay={200}>
-            <div className="mt-9">
-              <a
-                href="#visit"
-                className="inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 text-sm font-semibold text-foreground shadow-lg transition-transform hover:-translate-y-0.5"
-              >
-                Book an appointment
-                <ArrowRight className="size-4" />
-              </a>
+            <p className="mt-5 max-w-md text-lg leading-relaxed text-primary-foreground/90">
+              Thoughtful dentistry. Personal care. Right here in Portland.
+            </p>
+            <div className="mt-8">
+              <Button asChild variant="secondary" className="h-12 px-6">
+                <a href="#visit">Book an appointment <ArrowRight /></a>
+              </Button>
             </div>
           </Reveal>
-          <Reveal delay={400}>
-            <div className="mt-14 flex gap-10 border-t border-primary-foreground/20 pt-8">
-              {[
-                { value: "15+", label: "years of care" },
-                { value: "4.9", label: "patient rating" },
-                { value: "12k", label: "smiles treated" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="font-display text-3xl font-semibold text-primary-foreground">
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-xs tracking-wider text-primary-foreground/60 uppercase">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+
         </div>
       </div>
     </section>
@@ -204,24 +187,28 @@ function Hero() {
 const SERVICES = [
   {
     icon: ShieldCheck,
+    photo: treatmentPhoto.url,
     tag: "Preventive",
     title: "Cleanings & Exams",
     body: "Gentle, thorough cleanings and digital exams that keep small issues small.",
   },
   {
     icon: Sparkles,
+    photo: toolsPhoto.url,
     tag: "Cosmetic",
     title: "Teeth Whitening",
     body: "In-studio and custom take-home treatments for a naturally brighter smile.",
   },
   {
     icon: Scan,
+    photo: imagingPhoto.url,
     tag: "Restorative",
     title: "Dental Implants",
     body: "Permanent, natural-feeling replacements planned with 3D digital imaging.",
   },
   {
     icon: Smile,
+    photo: consultationPhoto.url,
     tag: "Orthodontics",
     title: "Clear Aligners",
     body: "Discreet, removable aligners mapped around your smile and your schedule.",
@@ -249,10 +236,9 @@ function Services() {
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {SERVICES.map((service, i) => (
           <Reveal key={service.title} delay={i * 80}>
-            <div className="group h-full rounded-3xl bg-card p-7 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:ring-primary/30">
-              <span className="grid size-12 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <service.icon className="size-6" />
-              </span>
+            <div className="group h-full overflow-hidden rounded-lg border border-border bg-card">
+              <img src={service.photo} alt={service.title === "Teeth Whitening" ? "Dental instruments prepared for care" : service.title === "Clear Aligners" ? "A dentist discussing treatment with a patient" : service.title === "Dental Implants" ? "A clinician examining a dental X-ray" : "A dentist providing a dental examination"} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+              <div className="p-5">
               <span className="mt-6 inline-block text-[11px] font-semibold tracking-[0.18em] text-accent-foreground/60 uppercase">
                 {service.tag}
               </span>
@@ -262,6 +248,7 @@ function Services() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {service.body}
               </p>
+              </div>
             </div>
           </Reveal>
         ))}
@@ -283,9 +270,9 @@ function About() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 sm:py-28 lg:grid-cols-2">
         <Reveal>
           <img
-            src={clinicRoom}
-            alt="A bright, calm treatment room at Northlight Dental Studio"
-            className="aspect-[6/5] w-full rounded-3xl object-cover ring-1 ring-black/5"
+            src={clinicPhoto.url}
+            alt="A dental treatment chair, examination light and digital imaging screen"
+            className="aspect-[6/5] w-full rounded-lg object-cover ring-1 ring-border"
             width={1440}
             height={1200}
             loading="lazy"
@@ -319,22 +306,25 @@ function About() {
 
 const TEAM = [
   {
-    photo: drMarsh,
-    name: "Dr. Elena Marsh",
-    role: "Lead Dentist · Restorative",
-    bio: "Fifteen years of minimally invasive crowns and full-mouth comfort care.",
+    photo: consultationPhoto.url,
+    name: "A conversation first",
+    role: "Personal attention",
+    bio: "Time to talk through your concerns and treatment options.",
+    alt: "Dentist discussing a dental scan with a patient",
   },
   {
-    photo: drWilliams,
-    name: "Dr. Marcus Williams",
-    role: "Orthodontist · Aligners",
-    bio: "Plans clear-aligner journeys that fit real, busy schedules.",
+    photo: teamPhoto.url,
+    name: "Care at your pace",
+    role: "Everyday dentistry",
+    bio: "A gentle approach, with your comfort at the centre.",
+    alt: "Two dental professionals carefully treating a patient",
   },
   {
-    photo: priya,
-    name: "Priya Nair, RDH",
-    role: "Lead Hygienist",
-    bio: "Known for the gentlest cleanings in Portland — and honest, jargon-free advice.",
+    photo: imagingPhoto.url,
+    name: "A clearer picture",
+    role: "Modern diagnostics",
+    bio: "Detailed imaging to help plan the right care for you.",
+    alt: "Dental professional reviewing X-ray images",
   },
 ];
 
@@ -344,21 +334,21 @@ function Team() {
       <Reveal>
         <div className="max-w-xl">
           <span className="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-            Meet the team
+            Our approach
           </span>
           <h2 className="font-display mt-4 text-4xl leading-tight font-semibold text-balance sm:text-5xl">
-            The people behind the chair.
+            Good care starts with listening.
           </h2>
         </div>
       </Reveal>
       <div className="mt-14 grid gap-6 sm:grid-cols-3">
         {TEAM.map((member, i) => (
           <Reveal key={member.name} delay={i * 80}>
-            <div className="overflow-hidden rounded-3xl bg-card ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1">
+            <div className="overflow-hidden rounded-lg bg-card ring-1 ring-border transition-transform duration-300 hover:-translate-y-1">
               <img
                 src={member.photo}
-                alt={`Portrait of ${member.name}`}
-                className="aspect-[4/5] w-full object-cover object-top"
+                alt={member.alt}
+                className="aspect-[4/3] w-full object-cover"
                 width={1024}
                 height={1280}
                 loading="lazy"
@@ -377,63 +367,6 @@ function Team() {
             </div>
           </Reveal>
         ))}
-      </div>
-    </section>
-  );
-}
-
-const REVIEWS = [
-  {
-    quote:
-      "I stopped dreading checkups. The room, the pace, the people — everything just feels calm.",
-    author: "Dana R.",
-    treatment: "Cleaning & Exam",
-  },
-  {
-    quote:
-      "They explained every cost upfront and never once rushed me through a decision.",
-    author: "Marcus L.",
-    treatment: "Dental Implant",
-  },
-  {
-    quote:
-      "My whitening came out even and natural — not that chalky, over-bright look at all.",
-    author: "Sofia M.",
-    treatment: "Teeth Whitening",
-  },
-];
-
-function Reviews() {
-  return (
-    <section id="reviews" className="bg-secondary/60">
-      <div className="mx-auto max-w-6xl px-6 py-24 sm:py-28">
-        <Reveal>
-          <div className="max-w-xl">
-            <span className="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-              Patient stories
-            </span>
-            <h2 className="font-display mt-4 text-4xl leading-tight font-semibold text-balance sm:text-5xl">
-              Quiet confidence, in their words.
-            </h2>
-          </div>
-        </Reveal>
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {REVIEWS.map((review, i) => (
-            <Reveal key={review.author} delay={i * 80}>
-              <figure className="flex h-full flex-col justify-between rounded-3xl bg-card p-8 ring-1 ring-black/5">
-                <blockquote className="font-display text-lg leading-relaxed text-pretty italic">
-                  “{review.quote}”
-                </blockquote>
-                <figcaption className="mt-6 text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">
-                    {review.author}
-                  </span>{" "}
-                  · {review.treatment}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -493,18 +426,17 @@ function Visit() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="rounded-3xl bg-background/5 p-8 ring-1 ring-background/10 sm:p-10">
+          <div className="rounded-lg bg-background/5 p-8 ring-1 ring-background/10 sm:p-10">
             {submitted ? (
               <div className="flex h-full flex-col items-center justify-center py-10 text-center">
                 <span className="grid size-14 place-items-center rounded-full bg-accent/25 text-accent">
                   <Check className="size-7" />
                 </span>
                 <h3 className="font-display mt-6 text-2xl font-semibold">
-                  Request received
+                  Thank you
                 </h3>
                 <p className="mt-3 max-w-xs text-sm leading-relaxed text-background/70">
-                  Thanks for reaching out — we'll confirm your appointment by
-                  phone within one business day.
+                  This is a demonstration form. No appointment request has been sent.
                 </p>
               </div>
             ) : (
@@ -527,7 +459,7 @@ function Visit() {
                     required
                     type="text"
                     placeholder="Jordan Smith"
-                    className="w-full rounded-2xl border border-background/15 bg-background/5 px-4 py-3 text-sm placeholder:text-background/30 focus:border-accent focus:outline-none"
+                    className="w-full rounded-md border border-background/15 bg-background/5 px-4 py-3 text-sm placeholder:text-background/30 focus:border-accent focus:outline-none"
                   />
                 </div>
                 <div>
@@ -542,7 +474,7 @@ function Visit() {
                     required
                     type="tel"
                     placeholder="(503) 555-0100"
-                    className="w-full rounded-2xl border border-background/15 bg-background/5 px-4 py-3 text-sm placeholder:text-background/30 focus:border-accent focus:outline-none"
+                    className="w-full rounded-md border border-background/15 bg-background/5 px-4 py-3 text-sm placeholder:text-background/30 focus:border-accent focus:outline-none"
                   />
                 </div>
                 <div>
@@ -555,7 +487,7 @@ function Visit() {
                   <select
                     id="service"
                     defaultValue="checkup"
-                    className="w-full appearance-none rounded-2xl border border-background/15 bg-background/5 px-4 py-3 text-sm focus:border-accent focus:outline-none"
+                    className="w-full appearance-none rounded-md border border-background/15 bg-background/5 px-4 py-3 text-sm focus:border-accent focus:outline-none"
                   >
                     <option className="text-foreground" value="checkup">
                       Check-up & cleaning
@@ -574,12 +506,9 @@ function Visit() {
                     </option>
                   </select>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full rounded-full bg-primary py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
-                >
-                  Request an appointment
-                </button>
+                <Button type="submit" className="h-12 w-full">
+                  Request an appointment <ArrowRight />
+                </Button>
                 <p className="text-center text-xs text-background/40">
                   We'll never share your details. No spam, ever.
                 </p>
@@ -604,7 +533,7 @@ function Footer() {
             © 2026 Northlight Dental Studio · Portland, OR
           </span>
         </div>
-        <div className="flex gap-6 text-sm text-background/60">
+        <div className="flex flex-wrap gap-6 text-sm text-background/60">
           <a href="#services" className="transition-colors hover:text-background">
             Services
           </a>
@@ -619,6 +548,10 @@ function Footer() {
           </a>
         </div>
       </div>
+      <div className="mx-auto mt-6 flex max-w-6xl flex-wrap justify-between gap-3 px-6 text-xs text-background/50">
+        <span>Illustrative clinic · Stock photography</span>
+        <a href="https://www.pexels.com/license/" target="_blank" rel="noreferrer" className="underline underline-offset-4">Photography from Pexels</a>
+      </div>
     </footer>
   );
 }
@@ -632,7 +565,6 @@ function Index() {
         <Services />
         <About />
         <Team />
-        <Reviews />
         <Visit />
       </main>
       <Footer />

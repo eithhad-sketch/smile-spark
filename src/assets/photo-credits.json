@@ -1,0 +1,13 @@
+{
+  "provider": "Pexels",
+  "license": "https://www.pexels.com/license/",
+  "usage": "Illustrative stock photography, not portraits of clinic staff or documentation of the fictional clinic.",
+  "photos": [
+    { "asset": "dental-treatment.jpg.asset.json", "source": "https://www.pexels.com/photo/4270940/", "id": 4270940 },
+    { "asset": "dental-clinic.jpg.asset.json", "source": "https://www.pexels.com/photo/4687337/", "id": 4687337 },
+    { "asset": "dental-consultation.jpg.asset.json", "source": "https://www.pexels.com/photo/4269204/", "id": 4269204 },
+    { "asset": "dental-care-team.jpg.asset.json", "source": "https://www.pexels.com/photo/3845951/", "id": 3845951 },
+    { "asset": "dental-imaging.jpg.asset.json", "source": "https://www.pexels.com/photo/4297519/", "id": 4297519 },
+    { "asset": "dental-instruments.jpg.asset.json", "source": "https://www.pexels.com/photo/4269356/", "id": 4269356 }
+  ]
+}
