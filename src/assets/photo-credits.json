@@ -1,7 +1,10 @@
 {
   "provider": "Pexels",
   "license": "https://www.pexels.com/license/",
-  "usage": "Illustrative stock photography, not portraits of clinic staff or documentation of the fictional clinic.",
+  "usage": "Illustrative stock photography and footage, not portraits of clinic staff or documentation of the fictional clinic.",
+  "videos": [
+    { "assets": ["dental-care.mp4.asset.json", "dental-care.webm.asset.json"], "source": "https://www.pexels.com/video/a-dentist-cleaning-the-teeth-of-a-man-6763244/", "download": "https://videos.pexels.com/video-files/6763244/6763244-hd_1920_1080_25fps.mp4", "creator": "Pavel Danilyuk", "id": 6763244, "license": "https://www.pexels.com/license/" }
+  ],
   "photos": [
     { "asset": "dental-treatment.jpg.asset.json", "source": "https://www.pexels.com/photo/4270940/", "id": 4270940 },
     { "asset": "dental-clinic.jpg.asset.json", "source": "https://www.pexels.com/photo/4687337/", "id": 4687337 },

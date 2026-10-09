@@ -11,3 +11,4 @@
 
 - Keep photography source and license credits in a project asset manifest; downloaded media is served through asset pointers so source attribution remains traceable.
 - Use the existing Button component for page actions and preserve the frontend-only appointment demonstration.
+- Keep clinic navigation, footer, and the demo appointment section in shared components so all content pages stay consistent.

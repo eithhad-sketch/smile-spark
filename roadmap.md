@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Replace the background with a different real dental-care video.
+- [x] Expand into Services, Our studio, New patients, and Contact pages with shared navigation.
+- [x] Verify page navigation, video playback, and the frontend-only appointment form.
+
 - [x] Fix preview crash: "Cannot read properties of null (reading 'useRef')" — stale HMR state; confirmed clean on fresh load
 - [x] Replace hero background with dental-care scene (credit limits blocked a new video; used dental-chair image with slow cinematic pan)
 - [x] Replace generated photos with licensed real Pexels dental photography, with source and license credits
