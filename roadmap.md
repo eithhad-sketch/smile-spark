@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Create and apply a professional clinic logo and matching favicon.
+- [ ] Make active photos and videos separate, portable hosting files with source credits retained.
+- [ ] Verify logo, all page media, and background video playback.
+
 - [x] Replace the background with a different real dental-care video.
 - [x] Expand into Services, Our studio, New patients, and Contact pages with shared navigation.
 - [x] Verify page navigation, video playback, and the frontend-only appointment form.
