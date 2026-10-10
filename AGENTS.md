@@ -9,6 +9,7 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Keep photography source and license credits in a project asset manifest; downloaded media is served through asset pointers so source attribution remains traceable.
+- Retain photography source pointers and license credits in the asset manifest; serve separate public/media files for portable external hosting as explicitly requested by the user.
 - Use the existing Button component for page actions and preserve the frontend-only appointment demonstration.
 - Keep clinic navigation, footer, and the demo appointment section in shared components so all content pages stay consistent.
+- Centralize media paths in src/lib/clinic-media.ts; the build-time preparation script validates sizes and reuses local copies to prevent incomplete deployments.

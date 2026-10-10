@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { ClinicNav, ClinicFooter, PageCover, BookingBand } from "@/components/clinic-layout";
 import { Process, InfoFaq } from "@/components/clinic-extras";
-import consultation from "@/assets/dental-consultation.jpg.asset.json";
+import { consultationPhoto as consultation } from "@/lib/clinic-media";
 
 export const Route = createFileRoute("/new-patients")({ head: () => ({ meta: [
   { title: "New Patients & First Visits | Northlight Dental Studio" },

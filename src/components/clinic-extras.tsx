@@ -1,30 +1,20 @@
 import { CalendarCheck, ClipboardList, Smile, Stethoscope, Star, Clock, ShieldCheck, Award, HeartHandshake } from "lucide-react";
-import toolsPhoto from "@/assets/dental-instruments.jpg.asset.json";
-import treatmentPhoto from "@/assets/dental-treatment.jpg.asset.json";
-import imagingPhoto from "@/assets/dental-imaging.jpg.asset.json";
-import clinicPhoto from "@/assets/dental-clinic.jpg.asset.json";
+import { toolsPhoto, treatmentPhoto, imagingPhoto, clinicPhoto } from "@/lib/clinic-media";
+import clinicLogo from "@/assets/northlight-logo.png";
 
 export function LogoMark({ className = "size-10" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
-      <rect width="48" height="48" rx="12" className="fill-primary" />
-      <path
-        className="fill-primary-foreground"
-        d="M16 5.5c-4.2 0-6.6 2.4-6.6 5.8 0 2.6 1.2 4 1.7 6.5.5 2.4-.3 5.2.5 7.9.5 1.9 1.5 3.2 2.7 3.2 1.8 0 1.5-3.1 1.9-5.3.2-1.2.4-1.9 1.3-1.9.9 0 1.1.7 1.3 1.9.4 2.2.1 5.3 1.9 5.3 1.2 0 2.2-1.3 2.7-3.2.8-2.7 0-5.5.5-7.9.5-2.5 1.7-3.9 1.7-6.5 0-3.4-2.4-5.8-6.6-5.8-1 0-1.9.2-2.6.2s-1.6-.2-2.6-.2z"
-        transform="translate(0 1) scale(1.4)"
-      />
-      <path className="fill-accent" d="M38 6l1.4 3.6L43 11l-3.6 1.4L38 16l-1.4-3.6L33 11l3.6-1.4z" />
-    </svg>
+    <img src={clinicLogo} width={128} height={128} alt="" aria-hidden="true" className={`${className} object-contain`} />
   );
 }
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
-    <span className="flex items-center gap-2.5">
-      <LogoMark className="size-10" />
+    <span className="flex items-center gap-3">
+      <span className={`grid size-12 shrink-0 place-items-center ${light ? "rounded-md bg-background" : ""}`}><LogoMark className="size-10" /></span>
       <span className="flex flex-col leading-none">
-        <span className={`font-display text-lg font-bold ${light ? "text-background" : "text-foreground"}`}>Northlight</span>
-        <span className={`mt-1 text-[10px] font-semibold tracking-[0.28em] uppercase ${light ? "text-accent" : "text-primary"}`}>Dental Studio</span>
+        <span className={`font-display text-xl font-semibold ${light ? "text-background" : "text-foreground"}`}>Northlight</span>
+        <span className={`mt-1.5 text-[10px] font-medium uppercase ${light ? "text-accent" : "text-primary"}`}>Dental Studio</span>
       </span>
     </span>
   );

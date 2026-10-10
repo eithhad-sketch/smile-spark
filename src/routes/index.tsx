@@ -11,14 +11,7 @@ import {
   ArrowRight,
   Check,
 } from "lucide-react";
-import heroVideo from "@/assets/dental-care.mp4.asset.json";
-import heroWebm from "@/assets/dental-care.webm.asset.json";
-import clinicPhoto from "@/assets/dental-clinic.jpg.asset.json";
-import treatmentPhoto from "@/assets/dental-treatment.jpg.asset.json";
-import consultationPhoto from "@/assets/dental-consultation.jpg.asset.json";
-import teamPhoto from "@/assets/dental-care-team.jpg.asset.json";
-import imagingPhoto from "@/assets/dental-imaging.jpg.asset.json";
-import toolsPhoto from "@/assets/dental-instruments.jpg.asset.json";
+import { heroVideo, heroWebm, clinicPhoto, treatmentPhoto, consultationPhoto, teamPhoto, imagingPhoto, toolsPhoto } from "@/lib/clinic-media";
 import { Button } from "@/components/ui/button";
 import { TrustBar, Process, Gallery, InfoFaq } from "@/components/clinic-extras";
 

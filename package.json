@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "prepare:media": "node scripts/prepare-media.mjs",
+    "build": "bun run prepare:media && vite build",
+    "build:dev": "bun run prepare:media && vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."

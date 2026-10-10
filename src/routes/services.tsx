@@ -2,10 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ClinicNav, ClinicFooter, PageCover, BookingBand } from "@/components/clinic-layout";
-import treatment from "@/assets/dental-treatment.jpg.asset.json";
-import instruments from "@/assets/dental-instruments.jpg.asset.json";
-import imaging from "@/assets/dental-imaging.jpg.asset.json";
-import consultation from "@/assets/dental-consultation.jpg.asset.json";
+import { treatmentPhoto as treatment, toolsPhoto as instruments, imagingPhoto as imaging, consultationPhoto as consultation } from "@/lib/clinic-media";
 
 export const Route = createFileRoute("/services")({
   head: () => ({ meta: [
