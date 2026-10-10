@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { HeartHandshake, Scan, MessageCircle } from "lucide-react";
 import { ClinicNav, ClinicFooter, PageCover, BookingBand } from "@/components/clinic-layout";
 import { Gallery } from "@/components/clinic-extras";
-import clinic from "@/assets/dental-clinic.jpg.asset.json";
-import team from "@/assets/dental-care-team.jpg.asset.json";
+import { clinicPhoto as clinic, teamPhoto as team } from "@/lib/clinic-media";
 
 export const Route = createFileRoute("/about")({ head: () => ({ meta: [
   { title: "Our Studio & Approach | Northlight Dental Studio" },
